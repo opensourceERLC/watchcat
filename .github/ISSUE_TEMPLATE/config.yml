@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/opensourceERLC/watchcat/security/advisories/new
+    about: Report security issues privately. Never open a public issue for a vulnerability.
+  - name: Questions and ideas
+    url: https://github.com/opensourceERLC/watchcat/discussions
+    about: Ask questions and discuss ideas in GitHub Discussions.
+  - name: ER:LC API problems
+    url: https://apidocs.erlc.gg/
+    about: Issues with the ER:LC API itself belong with Police Roleplay Community, not this project.

@@ -1,0 +1,70 @@
+name: Detection feedback
+description: Report a false positive (wrongly flagged) or a missed offence.
+title: "[Detection]: "
+labels: ["detection", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Detection feedback helps improve Watchcat's rules and models.
+        **Do not include real Roblox usernames, user IDs, avatar images or server keys.** Describe players by role, e.g. "Player A (civilian)", "Staff B".
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of problem
+      options:
+        - False positive (flagged, but not a rule break)
+        - Missed offence (rule break, but not flagged)
+        - Wrong offence class
+        - Wrong staff member assigned
+        - Wrong proposed sanction
+    validations:
+      required: true
+  - type: dropdown
+    id: offence
+    attributes:
+      label: Offence class
+      options:
+        - RDM
+        - Mass RDM
+        - Staff RDM / staff abuse
+        - Staff evasion
+        - Avatar
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: What happened in game?
+      description: Describe the sequence of events with anonymised players and approximate timings.
+      placeholder: |
+        Player A (police) was chasing Player B (criminal, 3 wanted stars).
+        Player B killed Player A, then left 20 seconds later.
+        Watchcat flagged Player B for RDM with score 0.91.
+    validations:
+      required: true
+  - type: textarea
+    id: rules
+    attributes:
+      label: Relevant server rule
+      description: Paraphrase the rule this should or should not have matched.
+  - type: textarea
+    id: config
+    attributes:
+      label: Detection configuration
+      description: Relevant thresholds or settings (no secrets).
+      render: yaml
+  - type: input
+    id: version
+    attributes:
+      label: Watchcat version or commit
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed all real player identifiers, avatars and secrets from this report.
+          required: true

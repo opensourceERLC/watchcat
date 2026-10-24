@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore"
+  # Add a "pip" (or other) ecosystem entry here once application code and a
+  # dependency manifest land in the repository.
